@@ -1,8 +1,11 @@
 package yu.pojo;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class Users {
+
+    @Id
     private String id;
 
     private String username;
@@ -16,6 +19,8 @@ public class Users {
     private String faceImageBig;
 
     private String nickname;
+
+
 
     private String qrcode;
 
@@ -131,5 +136,19 @@ public class Users {
      */
     public void setCid(String cid) {
         this.cid = cid;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", faceImage='" + faceImage + '\'' +
+                ", faceImageBig='" + faceImageBig + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", qrcode='" + qrcode + '\'' +
+                ", cid='" + cid + '\'' +
+                '}';
     }
 }
