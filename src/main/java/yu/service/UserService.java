@@ -1,6 +1,9 @@
 package yu.service;
 
+import yu.netty.ChatMsg;
 import yu.pojo.Users;
+import yu.pojo.vo.FriendRequestVO;
+import yu.pojo.vo.MyFriendsVO;
 
 import java.util.List;
 
@@ -45,5 +48,23 @@ public interface UserService {
 	 */
 	public void sendFriendRequest(String myUserId, String friendUsername);
 
+	public List<FriendRequestVO> queryFriendRequestList(String acceptUserId);
 
-}
+
+	public void deleteFriendRequest(String sendUserId, String acceptUserId);
+
+	public void passFriendRequest(String sendUserId, String acceptUserId);
+
+
+	public void saveFriends(String sendUserId, String acceptUserId) ;
+
+	public List<MyFriendsVO> queryMyFriends(String userId);
+	public String saveMsg(ChatMsg chatMsg) ;
+
+	public void updateMsgSigned(List<String> msgIdList) ;
+
+	public List<yu.pojo.ChatMsg> getUnReadMsgList(String acceptUserId) ;
+
+
+
+	}

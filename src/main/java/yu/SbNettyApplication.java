@@ -3,6 +3,7 @@ package yu;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -11,9 +12,17 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan(basePackages = {"yu.mapper"})
 public class SbNettyApplication {
 
+    @Bean
+    public SpringUtil getSpringUtil(){
+        return new SpringUtil();
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(SbNettyApplication.class, args);
     }
+
+
+
 
 }
 

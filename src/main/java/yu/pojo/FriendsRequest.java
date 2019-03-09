@@ -1,11 +1,13 @@
 package yu.pojo;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
 @Table(name = "friends_request")
 public class FriendsRequest {
+    @Id
     private String id;
 
     @Column(name = "send_user_id")

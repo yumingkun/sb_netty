@@ -1,11 +1,13 @@
 package yu.pojo;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
 @Table(name = "chat_msg")
 public class ChatMsg {
+    @Id
     private String id;
 
     @Column(name = "send_user_id")

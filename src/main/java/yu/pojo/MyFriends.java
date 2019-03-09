@@ -13,7 +13,7 @@ public class MyFriends {
     private String myUserId;
 
     @Column(name = "my_friend_user_id")
-    private Integer myFriendUserId;
+    private String myFriendUserId;
 
     /**
      * @return id
@@ -46,14 +46,14 @@ public class MyFriends {
     /**
      * @return my_friend_user_id
      */
-    public Integer getMyFriendUserId() {
+    public String getMyFriendUserId() {
         return myFriendUserId;
     }
 
     /**
      * @param myFriendUserId
      */
-    public void setMyFriendUserId(Integer myFriendUserId) {
+    public void setMyFriendUserId(String myFriendUserId) {
         this.myFriendUserId = myFriendUserId;
     }
 }

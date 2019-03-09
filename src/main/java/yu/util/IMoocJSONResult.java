@@ -32,9 +32,9 @@ public class IMoocJSONResult {
         return new IMoocJSONResult(data);
     }
 
-//    public static IMoocJSONResult ok() {
-//        return new IMoocJSONResult(null);
-//    }
+    public static IMoocJSONResult ok() {
+        return new IMoocJSONResult(null);
+    }
     
     public static IMoocJSONResult errorMsg(String msg) {
         return new IMoocJSONResult(500, msg, null);
