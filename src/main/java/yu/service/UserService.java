@@ -48,21 +48,64 @@ public interface UserService {
 	 */
 	public void sendFriendRequest(String myUserId, String friendUsername);
 
+
+	/**
+	 * 查询添加好友请求
+	 * @param acceptUserId
+	 * @return
+	 */
 	public List<FriendRequestVO> queryFriendRequestList(String acceptUserId);
 
 
+	/**
+	 * 删除好友添加请求
+	 * @param sendUserId
+	 * @param acceptUserId
+	 */
 	public void deleteFriendRequest(String sendUserId, String acceptUserId);
 
+
+	/**
+	 * 通过好友添加请求
+	 * @param sendUserId
+	 * @param acceptUserId
+	 */
 	public void passFriendRequest(String sendUserId, String acceptUserId);
 
 
+	/**
+	 * 保存好友
+	 * @param sendUserId
+	 * @param acceptUserId
+	 */
 	public void saveFriends(String sendUserId, String acceptUserId) ;
 
+	/**
+	 * 查询好友列表
+	 * @param userId
+	 * @return
+	 */
 	public List<MyFriendsVO> queryMyFriends(String userId);
+
+	/**
+	 *  保存聊天信息到数据库
+	 * @param chatMsg
+	 * @return
+	 */
 	public String saveMsg(ChatMsg chatMsg) ;
 
+	/**
+	 * 批量签收消息
+	 * @param msgIdList
+	 */
 	public void updateMsgSigned(List<String> msgIdList) ;
 
+
+	/**
+	 * 查询没有签收的消息列表
+	 * @param acceptUserId
+	 * @return
+	 */
 	public List<yu.pojo.ChatMsg> getUnReadMsgList(String acceptUserId) ;
 
 

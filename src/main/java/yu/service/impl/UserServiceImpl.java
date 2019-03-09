@@ -168,6 +168,8 @@ public class UserServiceImpl implements UserService {
 	 * @param username
 	 * @return
 	 */
+
+	@Transactional(propagation = Propagation.SUPPORTS)
 	@Override
 	public Users queryUserInfoByUsername(String username) {
 		Example ue=new Example(Users.class);
@@ -288,9 +290,9 @@ public class UserServiceImpl implements UserService {
 		chatCriteria.andEqualTo("signFlag", 0);
 		chatCriteria.andEqualTo("acceptUserId", acceptUserId);
 
-		List<yu.pojo.ChatMsg> result = chatMsgMapper.selectByExample(chatExample);
+		List<yu.pojo.ChatMsg> chatMsgList = chatMsgMapper.selectByExample(chatExample);
 
-		return result;
+		return chatMsgList;
 	}
 }
 
