@@ -6,7 +6,6 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,7 +27,6 @@ import yu.util.FastDFSClient;
 import yu.util.FileUtils;
 import yu.util.JsonUtils;
 import yu.util.QRCodeUtils;
-
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
