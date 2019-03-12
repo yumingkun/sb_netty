@@ -96,7 +96,7 @@ public class UserServiceImpl implements UserService {
 
 
 		// 为每个用户生成一个唯一的二维码
-		String qrCodePath = "/Users/mingkunyu/Downloads/" + userId + "qrcode.png";
+		String qrCodePath = "/yu_photo/" + userId + "qrcode.png";
 //		 muxin_qrcode:[username]
 		qrCodeUtils.createQRCode(qrCodePath, "muxin_qrcode:" + user.getUsername());
 		MultipartFile qrCodeFile = FileUtils.fileToMultipart(qrCodePath);

@@ -32,6 +32,33 @@ public class UserController {
 	@Autowired
 	private FastDFSClient fastDFSClient;
 
+	@RequestMapping("/test1")
+	public IMoocJSONResult test(){
+		Users user=new Users();
+		// 1.2 注册
+		user.setNickname("1234");
+		user.setFaceImage("");
+		user.setFaceImageBig("");
+		user.setPassword("1234");
+		Users userResult = userService.saveUser(user);
+
+
+	//把userResult的值赋值给userVO
+	    UsersVO userVO = new UsersVO();
+		BeanUtils.copyProperties(userResult, userVO);
+
+		return IMoocJSONResult.ok(userVO);
+	}
+
+
+	@RequestMapping("/test2")
+	public IMoocJSONResult test2() {
+		Users user = userService.queryUserInfoByUsername("test");
+
+
+		return IMoocJSONResult.ok(user);
+	}
+
 	/**
 	 * @Description: 用户注册/登录
 	 */
@@ -78,7 +105,7 @@ public class UserController {
 
 		// 获取前端传过来的base64字符串, 然后转换为文件对象再上传
 		String base64Data = userBO.getFaceData();
-		String userFacePath = "/Users/mingkunyu/Downloads/" + userBO.getUserId() + "userface64.png";
+		String userFacePath = "/yu_photo/" + userBO.getUserId() + "userface64.png";
 		FileUtils.base64ToFile(userFacePath, base64Data);
 
 		// 上传文件到fastdfs
